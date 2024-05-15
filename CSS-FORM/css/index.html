@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        form{
+            width: 40%;
+            margin: 0 auto;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="cadastro" method="get">
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            <label for="c-nome">Nome:</label>
+            <input type="text" name="nome" id="c-nome"><br>
+
+            <!-- ............... -->
+
+            <label for="c-email">E-mail</label>
+            <input type="email" name="email" id="c-email"><br>
+
+            <!-- ................. -->
+
+            <label for="c-senha">Senha</label>
+            <input type="password" name="senha" id="c-senha"><br>
+
+            <!-- ................ -->
+
+            <label for="c-busca">Busca</label>
+            <input type="search" name="busca" id="c-busca"><br>
+
+            <!-- ................... -->
+
+            <label for="c-site">Site</label>
+            <input type="url" name="site" id="c-site"><br>
+
+            <!-- ...................... -->
+
+            <label for="c-data">Data</label>
+            <input type="date" name="data" id="c-data"><br>
+
+            <!-- ....................... -->
+
+            <label for="c-hora">Hora</label>
+            <input type="time" name="hora" id="c-hora"><br>
+
+            <!-- .................... -->
+
+            <label for="c-quant">Quantidade</label>
+            <input type="number" name="quant" id="c-quant" min="0" max="50" step="0.01"><br>
+
+            <!-- ..................... -->
+
+            <label for="c-unid">Unidade</label>
+            <input type="range" name="unid" id="c-unid">
+            <span id="valor">50</span><br>
+
+            <!-- escolha de tamanho     -->
+
+            <fieldset>
+                <legend>Tamanho de manequim</legend>
+                <!-- tamanho p -->
+                <input type="radio" name="tamanho" id="c-peq" value="P">
+                <label for="c-peq">Pequeno</label>
+                <!-- tamanho m -->
+                <input type="radio" name="tamanho" id="c-med" value="M">
+                <label for="c-med">Medio</label>
+                 <!-- tamanho g    -->
+                <input type="radio" name="tamanho" id="c-grd" value="G">
+                <label for="c-grd">Grande</label>
+            </fieldset>
+
+
+                    <!-- escolha de cor -->
+            <fieldset>
+                <legend>Cores</legend>
+                <!-- cor Azul -->
+                <input type="checkbox" name="cores" id="c-azul" value="Azul">
+                <label for="c-azul">Azul</label>
+                <!-- cor Vermelha -->
+                <input type="checkbox" name="cores" id="c-vermelho" value="Vermelho">
+                <label for="c-vermelho">Vermelho</label>
+                <!-- cor verde -->
+                <input type="checkbox" name="cores" id="c-verde" value="Verde">
+                <label for="c-verde">Verde</label>
+            </fieldset>
+
+
+            <!-- escolha de endereco -->
+
+            <fieldset>
+                <legend>Endereco de entrega</legend>
+                <label for="c-estado">Estado</label>
+                <select name="Estado" id="c-estado">
+
+                    <option value="" disabled selected>Selecione um Estado</option>
+                    <!-- sudeste -->
+                    <optgroup label="Sudeste">
+                        <option value="SP">Sao paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                    </optgroup>
+                        <!-- sul -->
+                    <optgroup label="Sul">
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="PR">Parana</option>
+                        <option value="SC">Santa Catarina</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+        </fieldset>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <!-- unid -->
+    <script>
+        let range = document.querySelector('#c-unid')
+        let valor = document.querySelector('#valor')
+        range.addEventListener('input', function(){
+            valor.innerHTML = range.value
+        })
+    </script>
+</body>
+</html>
